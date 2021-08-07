@@ -1,8 +1,27 @@
 footer {
-    background-color: lightblue;
+    background-color: rgb(95, 123, 173);
     padding: 12px;
 
     h2 {
         margin: 0;
+    }
+
+    a {
+        margin: 0;
+        color: black;
+
+        text-decoration: none;
+
+        img {
+            width: 20px;
+            height: 20px;
+
+            margin-right: 10px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            color: rgb(46, 108, 129);
+        }
     }
 }
