@@ -8,13 +8,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
+import { StatsComponent } from './components/stats/stats.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    StatsComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
