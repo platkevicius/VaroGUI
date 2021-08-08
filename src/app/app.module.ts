@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { MapComponent } from './components/map/map.component';
+import { RulesComponent } from './components/rules/rules.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MapComponent } from './components/map/map.component';
     FooterComponent,
     HomeComponent,
     StatsComponent,
-    MapComponent
+    MapComponent,
+    RulesComponent
   ],
   imports: [
     BrowserModule,
