@@ -17,7 +17,11 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerOverlayComponent } from './components/spinner-overlay/spinner-overlay.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SpinnerInterceptor } from './interceptors/SpinnerInterceptor';
+import { SpinnerOverlayService } from './services/spinner-overlay.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     StatsComponent,
     MapComponent,
-    RulesComponent
+    RulesComponent,
+    SpinnerOverlayComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +45,14 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: SpinnerInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserData } from 'src/app/models/UserData';
+import { SpinnerOverlayService } from 'src/app/services/spinner-overlay.service';
 import { StatsService } from 'src/app/services/stats.service';
 
 @Component({
@@ -17,10 +18,9 @@ export class StatsComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
+  
   constructor(private statsService: StatsService) {
     this.statsService.getUserStats().subscribe((res) => {
-      
       this.dataSource = new MatTableDataSource(res);
     })
   }
