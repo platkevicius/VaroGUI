@@ -1,1 +1,17 @@
-<p>map works!</p>
+<div>
+    <app-map-item *ngFor="let user of userLocs"
+        classElem=".user"
+        [title]="user.name"
+        [location]="user">
+    </app-map-item>
+    <app-map-item *ngFor="let box of lootBoxLocs"
+        classElem=".chest"
+        title="Lootbox"
+        [location]="box">
+    </app-map-item>
+    <app-map-item
+        classElem=".border"
+        title="Border"
+        [location]="borderLoc">
+    </app-map-item>
+</div>

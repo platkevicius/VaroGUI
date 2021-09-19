@@ -1,6 +1,3 @@
-export interface BorderLocation {
-    x: Number,
-    y: Number,
-    z: Number,
-    radius: Number
+export interface BorderLocation extends Location {
+    radius: Number;
 }

@@ -12,12 +12,12 @@ export class LocationService {
 
   constructor(private http: HttpClient) { }
 
-  getUserLocations(): Observable<UserLocation> {
-    return this.http.get<UserLocation>('http://localhost:8080/api/user/locations');
+  getUserLocations(): Observable<UserLocation[]> {
+    return this.http.get<UserLocation[]>('http://localhost:8080/api/user/locations');
   }
 
-  getLootboxLocations(): Observable<LootboxLocation> {
-    return this.http.get<LootboxLocation>('http://localhost:8080/api/lootbox');
+  getLootboxLocations(): Observable<LootboxLocation[]> {
+    return this.http.get<LootboxLocation[]>('http://localhost:8080/api/lootbox');
   }
 
   getBorderLocation(): Observable<BorderLocation> {

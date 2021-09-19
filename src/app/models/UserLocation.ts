@@ -1,6 +1,3 @@
-export interface UserLocation {
-    x: Number,
-    y: Number,
-    z: Number,
-    name: String
+export interface UserLocation extends Location {
+    name: String;
 }

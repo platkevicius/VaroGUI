@@ -22,6 +22,7 @@ import { SpinnerOverlayComponent } from './components/spinner-overlay/spinner-ov
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SpinnerInterceptor } from './interceptors/SpinnerInterceptor';
 import { SpinnerOverlayService } from './services/spinner-overlay.service';
+import { MapItemComponent } from './components/map/map-item/map-item.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SpinnerOverlayService } from './services/spinner-overlay.service';
     StatsComponent,
     MapComponent,
     RulesComponent,
-    SpinnerOverlayComponent
+    SpinnerOverlayComponent,
+    MapItemComponent
   ],
   imports: [
     BrowserModule,
