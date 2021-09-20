@@ -21,7 +21,7 @@ export class LocationService {
   }
 
   getBorderLocation(): Observable<BorderLocation> {
-    return this.http.get<BorderLocation>('http://localhost:8080/api/border');
+    return this.http.get<BorderLocation>('http://localhost:8080/api/border?id=1');
   }
 
 }

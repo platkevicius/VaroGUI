@@ -1,6 +1,6 @@
-<mat-card>
+<mat-card class="container" *ngIf="location !== undefined">
     <mat-card-header>
-        <div mat-card-avatar class="{{ classElem }}"></div>
+        <div mat-card-avatar [ngClass]="classElem"></div>
         <mat-card-title>{{ title }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>

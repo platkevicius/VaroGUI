@@ -1,16 +1,16 @@
-<div>
+<div class="wrapper">
     <app-map-item *ngFor="let user of userLocs"
-        classElem=".user"
-        [title]="user.name"
+        classElem="player"
+        [title] ="user.name"
         [location]="user">
     </app-map-item>
     <app-map-item *ngFor="let box of lootBoxLocs"
-        classElem=".chest"
+        classElem="chest"
         title="Lootbox"
         [location]="box">
     </app-map-item>
     <app-map-item
-        classElem=".border"
+        classElem="border"
         title="Border"
         [location]="borderLoc">
     </app-map-item>
