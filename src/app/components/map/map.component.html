@@ -1,17 +1,37 @@
 <div class="wrapper">
-    <app-map-item *ngFor="let user of userLocs"
-        classElem="player"
-        [title] ="user.name"
-        [location]="user">
-    </app-map-item>
-    <app-map-item *ngFor="let box of lootBoxLocs"
-        classElem="chest"
-        title="Lootbox"
-        [location]="box">
-    </app-map-item>
-    <app-map-item
-        classElem="border"
-        title="Border"
-        [location]="borderLoc">
-    </app-map-item>
+    <mat-card class="container" *ngFor="let location of userLocs">
+        <mat-card-header>
+            <div mat-card-avatar class="player"></div>
+            <mat-card-title>{{ location.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>X: {{ location.x }}</p>
+            <p>Y: {{ location.y }}</p>
+            <p>Z: {{ location.z }}</p>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="container" *ngFor="let location of lootBoxLocs">
+        <mat-card-header>
+            <div mat-card-avatar [ngClass]="{'chest': !location.opened, 'chest-opened': location.opened}"></div>
+            <mat-card-title>LootBox</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>X: {{ location.x }}</p>
+            <p>Y: {{ location.y }}</p>
+            <p>Z: {{ location.z }}</p>
+            <p>opened: {{ location.opened }} </p>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="container" *ngIf="borderLoc !== undefined">
+        <mat-card-header>
+            <div mat-card-avatar class="border"></div>
+            <mat-card-title>Border</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>X: {{ borderLoc.x }}</p>
+            <p>Y: {{ borderLoc.y }}</p>
+            <p>Z: {{ borderLoc.z }}</p>
+            <p>radius: {{ borderLoc.radius }} </p>
+        </mat-card-content>
+    </mat-card>
 </div>

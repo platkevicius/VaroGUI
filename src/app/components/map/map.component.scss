@@ -5,3 +5,40 @@
 
     justify-content: center;
 }
+
+.container {
+    min-width: 150px;
+    min-height: 150px;
+    margin: 15px;
+
+    background-color: lightblue;
+    transition: transform 0.3s;
+
+    mat-card-header {
+        margin-bottom: 15px;
+
+        .chest {
+            background-image: url('../../../assets/chest.jpg');
+            background-size: cover;
+        }
+        
+        .chest-opened {
+            background-image: url('../../../assets/opened-chest.png');
+            background-size: cover;
+        }
+
+        .player {
+            background-image: url('../../../assets/Minecraft-Steve-Head.jpg');
+            background-size: cover;
+        }
+        
+        .border {
+            background-image: url('../../../assets/border.png');
+            background-size: cover;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
